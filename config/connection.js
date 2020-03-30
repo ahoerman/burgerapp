@@ -8,16 +8,16 @@ var connection = mysql.createConnection({
   database: "burgerdb"
 });
 
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
-//   connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'root1234',
-//     database: 'burgersdb'
-//   });
-// };
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root1234',
+    database: 'burgersdb'
+  });
+};
 
 connection.connect(function(err) {
   if (err) {
